@@ -37,11 +37,8 @@ kubectl expose services
 
 Now access it via
 
-[ACCESS NGINX]({{TRAFFIC_HOST1_32000}})/k10/#/
+[K10 Dashbord]({{TRAFFIC_HOST1_32000}}/k10/#/)
 
 It's also possible to access ports using the top-right navigation in the terminal.
 Or we can display the link to that page:
 
-[ACCESS PORTS]({{TRAFFIC_SELECTOR}})/k10/#/
-
-It's also possible to generate access URLs in bash (foreground or background scripts) like this:
