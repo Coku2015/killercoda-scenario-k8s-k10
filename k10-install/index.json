@@ -1,0 +1,22 @@
+{
+    "title": "K10-demo",
+    "description": "K10安装测试",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "检查helm和kubectl",
+          "text": "step1.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-k3s-1node-4GB"
+    }
+  }
+  
