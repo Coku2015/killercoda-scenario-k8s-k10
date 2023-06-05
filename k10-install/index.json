@@ -1,6 +1,6 @@
 {
-    "title": "K10-demo",
-    "description": "K10安装测试",
+    "title": "课程一：K10安装",
+    "description": "快速部署k10",
     "details": {
       "intro": {
         "text": "intro.md"
