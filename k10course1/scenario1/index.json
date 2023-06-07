@@ -1,0 +1,22 @@
+{
+    "title": "课程一：K10安装",
+    "description": "快速部署k10",
+    "details": {
+      "intro": {
+        "text": "intro.md"
+      },
+      "steps": [
+        {
+          "title": "检查helm和kubectl",
+          "text": "step1.md"
+        }
+      ],
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-k3s-1node-4GB"
+    }
+  }
+  
