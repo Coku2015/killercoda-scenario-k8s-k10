@@ -11,16 +11,16 @@
       "steps": [
         {
           "title": "Step1",
-          "text": "step1/text.md",
+          "text": "step1/text.md"
         },
         {
           "title": "Step2",
-          "text": "step2/text.md",
+          "text": "step2/text.md"
         }
       ],
       "finish": {
         "title": "Finish",
-        "text": "finish/text.md",
+        "text": "finish/text.md"
       }
     },
     "backend": {
