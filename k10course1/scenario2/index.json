@@ -1,0 +1,30 @@
+{
+    "title": "课程二：K10升级",
+    "description": "本教程介绍如何进行K10的版本升级",
+    "details": {
+      "intro": {
+        "title": "Intro",
+        "text": "intro/text.md",
+        "foreground": "intro/foreground.sh",
+        "background": "intro/background.sh"
+      },
+      "steps": [
+        {
+          "title": "Step1",
+          "text": "step1/text.md",
+        },
+        {
+          "title": "Step2",
+          "text": "step2/text.md",
+        }
+      ],
+      "finish": {
+        "title": "Finish",
+        "text": "finish/text.md",
+      }
+    },
+    "backend": {
+      "imageid": "kubernetes-k3s-1node-4GB"
+    }
+  }
+  

@@ -1,6 +1,6 @@
 {
     "items": [
       { "path": "k10-install" },
-      { "path": "k10course1" }
+      { "path": "k10course1", "title": "一步一步学K10" }
     ]
   }
