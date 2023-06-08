@@ -41,8 +41,8 @@ spec:
   ports:
   - name: console
     port: 9090
-    nodePort: 9090
+    nodePort: 32100
   - name: api
     port: 9000
-    nodePort: 9000
+    nodePort: 32200
   type: NodePort
