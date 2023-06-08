@@ -16,6 +16,13 @@ spec:
   containers:
   - name: minio
     image: quay.io/minio/minio:latest
+    ports:
+    - containerPort: 9000
+      name: http
+      protocol: TCP
+    - containerPort: 9090
+      name: http
+      protocol: TCP
     command:
     - /bin/bash
     - -c
