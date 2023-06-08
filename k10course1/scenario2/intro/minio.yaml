@@ -6,50 +6,82 @@ metadata:
     name: minio # Change this value to match metadata.name
 ---
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
   labels:
     app: minio
   name: minio
   namespace: minio # Change this value to match the namespace metadata.name
 spec:
-  containers:
-  - name: minio
-    image: quay.io/minio/minio:latest
-    ports:
-    - containerPort: 9000
-      name: http
-      protocol: TCP
-    - containerPort: 9090
-      name: http
-      protocol: TCP
-    command:
-    - /bin/bash
-    - -c
-    args: 
-    - minio server /data --console-address :9090
-    volumeMounts:
-    - mountPath: /data
-      name: localvolume # Corresponds to the `spec.volumes` Persistent Volume
-  volumes:
-  - name: localvolume
-    hostPath: # MinIO generally recommends using locally-attached volumes
-      path: /mnt/disk1/data # Specify a path to a local drive or volume on the Kubernetes worker node
-      type: DirectoryOrCreate # The path to the last directory must exist
+  replicas: 1
+  selector:
+    matchLabels:
+      name: minio
+  template:
+    metadata:
+      labels:
+        name: minio
+    spec:
+      containers:
+      - name: minio
+        image: quay.io/minio/minio:latest
+        ports:
+        - containerPort: 9000
+          name: http
+          protocol: TCP
+        - containerPort: 9090
+          name: http
+          protocol: TCP
+        command:
+        - /bin/bash
+        - -c
+        args: 
+        - minio server /data --console-address :9090
+        volumeMounts:
+        - mountPath: /data
+          name: localvolume # Corresponds to the `spec.volumes` Persistent Volume
+      restartPolicy: Always    
+      volumes:
+      - name: localvolume
+        hostPath: # MinIO generally recommends using locally-attached volumes
+          path: /mnt/disk1/data # Specify a path to a local drive or volume on the Kubernetes worker node
+          type: DirectoryOrCreate # The path to the last directory must exist
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: minio-nodeport
+  labels:
+    name: minio
+  name: minio
   namespace: minio
 spec:
   selector:
-    service: minio
+    name: minio
   ports:
   - name: console
+    protocol: TCP
+    targetPort: 9090
     port: 9090
+  - name: api
+    protocol: TCP
+    targetPort: 9000
+    port: 9090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: minio
+  name: minio
+  namespace: minio
+spec:
+  selector:
+    name: minio
+  ports:
+  - name: console
+    targetPort: 9090
     nodePort: 32100
   - name: api
-    port: 9000
+    targetPort: 9000
     nodePort: 32200
   type: NodePort
