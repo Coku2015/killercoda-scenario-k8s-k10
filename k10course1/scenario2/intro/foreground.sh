@@ -1,3 +1,3 @@
-echo waiting for intro-background-script to finish
+echo Installing scenario... Please wait!
 while [ ! -f /tmp/background1 ]; do sleep 1; done
-echo DONE
+echo Scenario installed successfully!
