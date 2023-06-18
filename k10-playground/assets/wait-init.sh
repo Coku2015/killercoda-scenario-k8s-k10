@@ -19,10 +19,10 @@ while [ ! -f /ks/.k8sfinished ]; do
 done;
 echo " done"
 
-echo -n "Installing K10, this can take 3-5 minutes..."
+echo -n "Installing Scenario, this can take 3-5 minutes..."
 while [ ! -f /ks/.initfinished ]; do
     echo -n '.'
-    sleep 1;
+    sleep 20;
 done;
 echo " done"
 
