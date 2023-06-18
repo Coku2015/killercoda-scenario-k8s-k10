@@ -1,27 +1,6 @@
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml 
-helm repo add kasten https://charts.kasten.io/
-helm repo update
-kubectl create ns kasten-io
-helm install k10 kasten/k10 -n kasten-io
-kubectl wait --for=condition=ready --timeout=3000s pod -A --all
-cat <<EOF | kubectl create -f -
-apiVersion: v1
-kind: Service
-metadata:
-  name: gateway-nodeport
-  namespace: kasten-io
-spec:
-  selector:
-    service: gateway
-  ports:
-  - name: http
-    port: 8000
-    nodePort: 32000
-  type: NodePort
-EOF
+#!/bin/bash
 
-kubectl apply -f https://raw.githubusercontent.com/Coku2015/killercoda-scenario-k8s-k10/main/k10course1/scenario2/intro/minio.yaml
-sleep 5
-kubectl wait --for=condition=ready --timeout=3000s pod -A --all
+# will run in background. can setup various things for the scenario for user not to see
+# DO NOT change file: add changes in init.sh
 
-echo done > /tmp/background1
+FILE=/ks/init.sh; while ! test -f ${FILE}; do clear; sleep 0.1; done; bash ${FILE} > /ks/init.log

@@ -1,3 +1,1 @@
-echo Installing scenario... Please wait!
-while [ ! -f /tmp/background1 ]; do sleep 1; done
-echo Scenario installed successfully!
+FILE=/ks/wait-init.sh; while ! test -f ${FILE}; do clear; sleep 0.1; done; bash ${FILE}

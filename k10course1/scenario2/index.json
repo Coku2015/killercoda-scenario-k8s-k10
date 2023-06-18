@@ -6,7 +6,8 @@
         "title": "Intro",
         "text": "intro/text.md",
         "foreground": "intro/foreground.sh",
-        "background": "intro/background.sh"
+        "background": "intro/background.sh",
+        "credits": ""
       },
       "steps": [
         {
@@ -21,6 +22,14 @@
       "finish": {
         "title": "Finish",
         "text": "finish/text.md"
+      },
+      "assets": {
+        "host01": [
+          {"file": "init.sh", "target": "/ks", "chmod": "+x"},
+          {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
+          {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"},
+          {"file": "minio.yaml", "target": "/root/"}
+        ]
       }
     },
     "backend": {
