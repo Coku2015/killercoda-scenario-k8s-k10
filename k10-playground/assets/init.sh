@@ -19,7 +19,9 @@ helm repo update
 kubectl create ns nginx
 kubectl create ns minio
 kubectl create ns kasten-io
-helm install objectstorage bitnami/minio -n minio
+helm install objectstorage bitnami/minio -n minio \
+  --set auth.rootUser=minioadmin \
+  --set auth.rootPassword=minioadmin
 helm install webserver bitnami/nginx -n nginx
 helm install k10 kasten/k10 -n kasten-io
 
@@ -36,6 +38,27 @@ spec:
   - name: http
     port: 8000
     nodePort: 32000
+  type: NodePort
+EOF
+
+cat <<EOF | kubectl create -f -
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio-nodeport
+  namespace: minio
+spec:
+  selector:
+    app.kubernetes.io/instance: objectstorage
+  ports:
+  - name: minio-api
+    port: 9000
+    nodePort: 32001
+    protocol: TCP
+  - name: minio-console
+    port: 9001
+    nodePort: 32002
+    protocol: TCP
   type: NodePort
 EOF
 
