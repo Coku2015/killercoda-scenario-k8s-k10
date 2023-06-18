@@ -1,6 +1,6 @@
 {
-    "title": "课程二：K10升级",
-    "description": "本教程介绍如何进行K10的版本升级",
+    "title": "K10基础Demo环境",
+    "description": "本环境用于各种K10演示和测试，已经内置了K10、Minio和WebServer",
     "details": {
       "intro": {
         "title": "Intro",
