@@ -6,11 +6,14 @@ rm $0
 
 clear
 
-echo "#########################";
-echo "##                     ##";
-echo "##   $ k10 Shell       ##";
-echo "##                     ##";
-echo "#########################";
+echo "#################################";
+echo "##                             ##";
+echo "##   Environment Detail:       ##";
+echo "##   K3S v1.27                 ##";
+echo "##   Kasten K10 + Minio        ##";
+echo "##   Nginx Webserver           ##";
+echo "##                             ##";
+echo "#################################";
 
 echo -n "Initialising Kubernetes..."
 while [ ! -f /ks/.k8sfinished ]; do
