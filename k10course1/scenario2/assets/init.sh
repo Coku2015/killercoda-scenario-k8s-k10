@@ -33,7 +33,7 @@ spec:
   type: NodePort
 EOF
 
-kubectl wait --for=condition=ready --timeout=600s pod -A --all
+kubectl wait --for=condition=ready --timeout=600s pod -n kasten-io --all
 
 #kubectl apply -f minio.yaml
 #sleep 5

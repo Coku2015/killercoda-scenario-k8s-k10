@@ -23,7 +23,7 @@ spec:
         name: minio
     spec:
       containers:
-      - name: minio
+      - name: k10miniolocal
         image: quay.io/minio/minio:latest
         ports:
         - containerPort: 9000
