@@ -22,8 +22,9 @@ kubectl create ns kasten-io
 helm install objectstorage bitnami/minio -n minio \
   --set auth.rootUser=minioadmin \
   --set auth.rootPassword=minioadmin
-helm install webserver bitnami/nginx -n nginx
-helm install k10 kasten/k10 -n kasten-io
+helm install k10 kasten/k10 -n kasten-io \
+  --set injectKanisterSidecar.enabled=true \
+  --set excludedApps[0]="minio"
 
 cat <<EOF | kubectl create -f -
 apiVersion: v1
@@ -63,6 +64,16 @@ spec:
 EOF
 
 kubectl wait --for=condition=ready --timeout=600s pod -n kasten-io --all
+
+kubectl run --namespace minio objectstorage-minio-client \
+    --rm -it --restart='Never' \
+    --image docker.io/bitnami/minio-client:2023.5.18-debian-11-r2 -- \
+    /bin/sh -c "mc alias set k10minio http://objectstorage-minio:9000 minioadmin minioadmin && mc mb k10minio/k10"
+
+kubectl apply -f /ks/k10secret.yaml
+kubectl apply -f /ks/profile.yaml
+
+helm install webserver bitnami/nginx -n nginx
 
 # mark init finished
 touch /ks/.initfinished

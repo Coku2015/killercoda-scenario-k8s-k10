@@ -13,10 +13,6 @@
         {
           "title": "Step1",
           "text": "step1/text.md"
-        },
-        {
-          "title": "Step2",
-          "text": "step2/text.md"
         }
       ],
       "finish": {
@@ -27,6 +23,8 @@
         "host01": [
           {"file": "init.sh", "target": "/ks", "chmod": "+x"},
           {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
+          {"file": "k10secret.yaml", "target": "/ks"},
+          {"file": "profile.yaml", "target": "/ks"},
           {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
         ]
       }
