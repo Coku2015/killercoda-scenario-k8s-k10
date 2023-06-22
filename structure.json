@@ -1,6 +1,6 @@
 {
     "items": [
-      { "path": "k10course1", "title": "K10闪电课程系列", "description": "让你10分钟掌握一个K10小技巧"},
+      { "path": "k10course1", "title": "K10专家养成系列课程", "description": "让你从零开始掌握各种K10使用技巧"},
       { "path": "k10-playground" }
     ]
   }
