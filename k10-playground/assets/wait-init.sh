@@ -11,11 +11,12 @@ echo "##                             ##";
 echo "##   Environment Detail:       ##";
 echo "##   K3S v1.27                 ##";
 echo "##   Kasten K10 + Minio        ##";
-echo "##   Nginx Webserver           ##";
+echo "##   PostgreSQL                ##";
+echo "##   Lab is initializing...    ##";
 echo "##                             ##";
 echo "#################################";
 
-echo -n "Initialising Kubernetes..."
+echo -n "Initializing Kubernetes..."
 while [ ! -f /ks/.k8sfinished ]; do
     echo -n '.'
     sleep 1;

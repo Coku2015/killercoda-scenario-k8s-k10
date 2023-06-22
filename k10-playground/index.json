@@ -1,6 +1,6 @@
 {
     "title": "K10基础Demo环境",
-    "description": "本环境用于各种K10演示和测试，已经内置了K10、Minio和WebServer",
+    "description": "本环境用于各种K10演示和测试，已经内置了K10、Minio和pgsql",
     "details": {
       "intro": {
         "title": "Intro",
@@ -23,8 +23,6 @@
         "host01": [
           {"file": "init.sh", "target": "/ks", "chmod": "+x"},
           {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
-          {"file": "k10secret.yaml", "target": "/ks"},
-          {"file": "profile.yaml", "target": "/ks"},
           {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
         ]
       }
