@@ -1,18 +1,41 @@
 {
-    "title": "课程一：K10安装",
-    "description": "快速部署k10",
+    "title": "第一课：Helm使用方法",
+    "description": "K10安装基础是Helm命令，本期课程详解Helm用法，掌握Helm有助于全面掌握K10安装过程",
     "details": {
       "intro": {
-        "text": "intro.md"
+        "title": "课课简介",
+        "text": "intro/text.md",
+        "foreground": "intro/foreground.sh",
+        "background": "intro/background.sh",
+        "credits": ""
       },
       "steps": [
         {
-          "title": "检查helm和kubectl",
-          "text": "step1.md"
+          "title": "第一小节",
+          "text": "step1/text.md"
+        },
+        {
+          "title": "第二小节",
+          "text": "step2/text.md"
+        },
+        {
+          "title": "第三小节",
+          "text": "step3/text.md"
+        },
+        {
+          "title": "第四小节",
+          "text": "step4/text.md"
         }
       ],
       "finish": {
-        "text": "finish.md"
+        "title": "本课小结",
+        "text": "finish/text.md"
+      },
+      "assets": {
+        "host01": [
+          {"file": "init.sh", "target": "/ks", "chmod": "+x"},
+          {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
+        ]
       }
     },
     "backend": {
