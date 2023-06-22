@@ -18,7 +18,7 @@ Minio Password:
 minioadmin
 ```{{copy}}
 
-Minio API 地址: 
+Minio S3 API 地址: 
 ```
 {{TRAFFIC_HOST1_32001}}
 ```{{copy}}

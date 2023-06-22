@@ -16,7 +16,7 @@ helm repo add kasten https://charts.kasten.io/
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
 
-kubectl create ns nginx
+kubectl create ns pgsql
 kubectl create ns minio
 kubectl create ns kasten-io
 helm install objectstorage bitnami/minio -n minio \
@@ -67,7 +67,7 @@ EOF
 
 kubectl wait --for=condition=ready --timeout=600s pod -n kasten-io --all
 
-helm install webserver bitnami/nginx -n nginx
+helm install postgresql bitnami/postgresql -n pgsql
 echo 'export KUBECONFIG=/etc/rancher/k3s/k3s.yaml' >> ~/.bashrc
 
 # mark init finished
