@@ -11,7 +11,7 @@ echo "##                             ##";
 echo "##   Environment Detail:       ##";
 echo "##   K3S v1.27                 ##";
 echo "##   Kasten K10 + Minio        ##";
-echo "##   PostgreSQL                ##";
+echo "##   demo linux with pvc       ##";
 echo "##   Lab is initializing...    ##";
 echo "##                             ##";
 echo "#################################";
