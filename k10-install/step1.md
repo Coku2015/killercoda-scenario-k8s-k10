@@ -4,7 +4,7 @@
 ```plain
 helm version
 ```{{exec}}
-1a. 加载环境kubectl的变量
+1a. 加载kubectl的环境变量
 
 ```plain
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml 
