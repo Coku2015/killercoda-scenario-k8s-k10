@@ -13,7 +13,7 @@ helm install my-k10 kasten/k10 --version 6.0.0 -n kasten-io
 kubectl apply -f k10-nodeport.yaml
 ```{{exec}}
 
-这条命令执行成功后，请点击这个链接访问[Kasten K10的Web UI]({{TRAFFIC_HOST1_32000}}/k10/#/)
+这条命令执行成功后，请点击这个链接访问[Kasten K10的Web UI]({{TRAFFIC_HOST1_32000}}/my-k10/#/)
 
 ## 1.2. 升级软件
 

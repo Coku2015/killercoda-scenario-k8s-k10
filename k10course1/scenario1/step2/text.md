@@ -31,7 +31,7 @@ watch -n 2 'kubectl get pods -n kasten-io'
 kubectl apply -f k10-nodeport.yaml
 ```{{exec}}
 
-这条命令执行成功后，请点击这个链接访问[Kasten K10的Web UI]({{TRAFFIC_HOST1_32000}}/k10/#/)
+这条命令执行成功后，请点击这个链接访问[Kasten K10的Web UI]({{TRAFFIC_HOST1_32000}}/my-k10/#/)
 
 ## 2.3. 查看Helm安装状态
 对于已安装的软件，也可以通过`helm status`来再次获取安装状态，命令如下：
