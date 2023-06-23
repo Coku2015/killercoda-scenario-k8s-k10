@@ -26,6 +26,14 @@ watch -n 2 'kubectl get pods -n kasten-io'
 
 按退出快捷键Ctrl+C可以结束查看退出以上命令。
 
+安装完成后，我们开放下nodeport端口, 命令如下：
+```bash
+kubectl apply -f k10-nodeport.yaml
+```{{exec}}
+
+这条命令执行成功后，请点击这个链接访问[Kasten K10的Web UI]({{TRAFFIC_HOST1_32000}}/k10/#/)
+
+## 2.3. 查看Helm安装状态
 对于已安装的软件，也可以通过`helm status`来再次获取安装状态，命令如下：
 
 ```bash
@@ -38,7 +46,7 @@ helm status my-k10 -n kasten-io
 helm history my-k10 -n kasten-io
 ```{{exec}}
 
-## 2.3. 卸载软件
+## 2.4. 卸载软件
 
 要清理安装的软件，可以使用以下命令: `helm uninstall <安装实例名称> -n <k8s命名空间>`
 
@@ -48,15 +56,4 @@ helm history my-k10 -n kasten-io
 helm uninstall my-k10 -n kasten-io
 ```{{exec}}
 
-## 2.4. 使用Helm安装软件的指定版本
-
-在helm安装命令中，我们可以加入--version参数来指定我们需要的版本。
-
-我们来试下安装k10 6.0.0这个版本
-
-```bash
-helm install my-k10 veeam-kasten/k10 --version 6.0.0 -n kasten-io
-```{{exec}}
-
-在安装完成后，注意观察所有Pod是否正常启动。
 

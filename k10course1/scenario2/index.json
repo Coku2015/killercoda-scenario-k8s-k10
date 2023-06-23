@@ -1,6 +1,6 @@
 {
-    "title": "第一课：Helm使用方法",
-    "description": "K10安装基础是Helm命令，本期课程详解Helm用法，掌握Helm有助于全面掌握K10安装过程",
+    "title": "第二课：K10安装升级进阶技巧",
+    "description": "K10安装基础是Helm命令，本期课程详解K10升级和进阶安装技巧。",
     "details": {
       "intro": {
         "title": "本课简介",

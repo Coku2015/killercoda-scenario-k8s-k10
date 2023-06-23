@@ -56,6 +56,8 @@ helm search repo kasten
 helm search repo kasten --versions
 ```{{exec}}
 
+同样的操作，我们可以自行探索搜索bitnami软件库。
+
 
 
 
