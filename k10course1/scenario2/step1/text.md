@@ -5,7 +5,7 @@
 我们来试下安装k10 6.0.0这个版本
 
 ```bash
-helm install my-k10 veeam-kasten/k10 --version 6.0.0 -n kasten-io
+helm install my-k10 kasten/k10 --version 6.0.0 -n kasten-io
 ```{{exec}}
 
 在安装完成后，注意观察所有Pod是否正常启动。我们开放下nodeport端口, 命令如下：
@@ -28,7 +28,7 @@ helm repo update
 我们来试下升级Kasten K10，命令如下：
 
 ```bash
-helm upgrade my-k10 veeam-kasten/k10 -n kasten-io
+helm upgrade my-k10 kasten/k10 -n kasten-io
 ```{{exec}}
 
 升级完成后，我们再使用`helm history`命令来查看这份软件的安装历史，命令如下：

@@ -6,7 +6,7 @@
 以helm upgrade为例，我们来试下启用GVS备份模式，命令如下：
 
 ```bash
-helm upgrade my-k10 veeam-kasten/k10 -n kasten-io \
+helm upgrade my-k10 kasten/k10 -n kasten-io \
     --set injectKanisterSidecar.enabled=true 
 ```{{exec}}
 
